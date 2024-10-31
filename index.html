@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Movie Management</h1>
+
+    <h2>Add New Movie</h2>
+    <form id="addMovieForm">
+        <label for="imdbId">IMDb ID:</label>
+        <input type="text" id="imdbId" name="imdbId" required><br><br>
+
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required><br><br>
+
+        <label for="rating">IMDb Rating:</label>
+        <input type="number" step="0.1" id="rating" name="rating" required><br><br>
+
+        <label for="year">Year of Release:</label>
+        <input type="number" id="year" name="year" required><br><br>
+
+        <button type="submit">Add Movie</button>
+    </form>
+
+    <h2>View Movie Details</h2>
+    <form id="viewMovieForm">
+        <label for="viewImdbId">Enter IMDb ID:</label>
+        <input type="text" id="viewImdbId" name="viewImdbId" required>
+        <button type="submit">View Details</button>
+    </form>
+    
+    <div id="movieDetails">
+        <!-- Movie details will be displayed here after fetching -->
+    </div>
+
+    <h2>Delete Movie</h2>
+    <form id="deleteMovieForm">
+        <label for="deleteImdbId">IMDb ID:</label>
+        <input type="text" id="deleteImdbId" name="deleteImdbId" required><br><br>
+        <button type="submit">Delete Movie</button>
+    </form>
+
+    <div id="deleteResult"></div>
+
+
+    <h2>All Movies</h2>
+
+    <table id="moviesTable">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Year</th>
+                <th>IMDb Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Movies will be dynamically added here -->
+        </tbody>
+    </table>
+</body>
+
+<script src="./js/main.js"></script>
+
+</html>
